@@ -1,0 +1,17 @@
+.l-app {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+}
+
+.l-app-titlebar {
+  flex: 0 0 40px;
+}
+
+.l-app-main {
+  flex: 1 1 auto;
+}
+
+.l-app-footer {
+  flex: 0 0 40px;
+}

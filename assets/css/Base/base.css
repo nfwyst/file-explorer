@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  font-family: Arial;
+  margin: 0;
+}
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
