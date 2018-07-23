@@ -20,7 +20,7 @@
   <div class="l-app-main l-main">
     <aside class="l-main-dir-list dir-list">
       <nav>
-        <ul>
+        <ul data-bind="dirList">
           <li class="dir-list-li">..</li>
           <li class="dir-list-li"><i class="icon">folder</i>assets</li>
           <li class="dir-list-li"><i class="icon">folder</i>js</li>
@@ -31,7 +31,7 @@
     </aside>
     <main class="l-main-file-list file-list">
       <nav>
-        <ul>
+        <ul data-bind="fileLst">
           <li class="file-list-li file-list-head">
             <span class="file-list-li-name">Name</span>
             <span class="file-list-li-size">Size</span>

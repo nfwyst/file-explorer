@@ -33,4 +33,14 @@ describe("service/Dir", () => {
       expect(file.stats.mtime).toBeTruthy();
     });
   });
+  describe("#setDir", () => {
+    it("触发更新事件", () => {
+      const service = new DirService('foo');
+      service.on('update', () => {
+        console.log('set dir 确实更新了');
+        expect(true).toBe(true);
+      });
+      service.notify();
+    });
+  });
 });
