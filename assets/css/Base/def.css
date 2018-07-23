@@ -3,10 +3,14 @@
   --titlebar-fg-color: #dcdcdc;
   --dirlist-bg-color: #dedede;
   --dirlist-fg-color: #636363;
+  --dirlist-bg-hover-color: #d64937;
+  --dirlist-fg-hover-color: #fff;
   --filelist-bg-color: #f9f9f9;
   --filelist-fg-color: #333341;
+  --filelist-fg-hover-color: #d64937;
   --dirlist-w: 250px;
   --titlebar-h: 40px;
+  --titlebar-btn-w: 25px;
   --footer-h: 40px;
   --footer-bg-color: #dedede;
   --separator-color: #2d2d2d;

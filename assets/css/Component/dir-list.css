@@ -3,3 +3,18 @@
   color: var(--dirlist-fg-color);
   border-right: 1px solid var(--separator-color);
 }
+
+.dir-list-li {
+  padding: .8em .6em;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  transition: all .2s linear;
+}
+
+.dir-list-li:hover {
+  background-color: var(--dirlist-bg-hover-color);
+  color: var(--dirlist-fg-hover-color);
+}

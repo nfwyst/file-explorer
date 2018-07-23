@@ -2,3 +2,36 @@
   background-color: var(--filelist-bg-color);
   color: var(--filelist-fg-color);
 }
+
+.file-list-li {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.file-list-li:not(.file-list-head) {
+  cursor: pointer;
+}
+
+.file-list-li:not(.file-list-head):hover {
+  color: var(--filelist-fg-hover-color);
+}
+
+.file-list-li > * {
+  flex: 1 1 auto;
+  padding: .8em;
+  overflow: hidden;
+}
+
+.file-list-li-name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 50%;
+}
+
+.file-list-li-size: {
+  width: 15%;
+}
+
+.file-list-li-time {
+  width: 35%;
+}
