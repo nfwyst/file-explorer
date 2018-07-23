@@ -20,6 +20,7 @@
     "test": "nw ./tests/unit-tests"
   },
   "devDependencies": {
+    "filesize": "^3.6.1",
     "fs-jetpack": "^2.0.0",
     "mock-fs": "^4.5.0",
     "nw": "0.31.5-sdk"

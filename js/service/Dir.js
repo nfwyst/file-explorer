@@ -10,6 +10,10 @@ class DirService extends EventEmitter {
     this.dir = dir || process.cwd();
   }
 
+  getFile(fileName) {
+    return join(this.dir, fileName);
+  }
+
   setDir(dir = "") {
     let newDir = join(this.dir, dir);
     if (!DirService.getStats(newDir)) {
