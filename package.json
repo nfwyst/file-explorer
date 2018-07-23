@@ -17,5 +17,8 @@
   },
   "scripts": {
     "start": "nw ."
+  },
+  "dependencies": {
+    "nw": "0.31.5-sdk"
   }
 }
