@@ -1,5 +1,5 @@
 .dir-list {
-  background-color: #dedede;
-  color: #fff;
-  border-right: 1px solid #2d2d2d;
+  background-color: var(--dirlist-bg-color);
+  color: var(--dirlist-fg-color);
+  border-right: 1px solid var(--separator-color);
 }

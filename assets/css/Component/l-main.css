@@ -5,7 +5,7 @@
 }
 
 .l-main-dir-list {
-  flex: 0 0 250px;
+  flex: 0 0 var(--dirlist-w);
 }
 
 .l-main-file-list {

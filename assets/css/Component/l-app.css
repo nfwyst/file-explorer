@@ -5,7 +5,7 @@
 }
 
 .l-app-titlebar {
-  flex: 0 0 40px;
+  flex: 0 0 var(--titlebar-h);
 }
 
 .l-app-main {
@@ -13,5 +13,5 @@
 }
 
 .l-app-footer {
-  flex: 0 0 40px;
+  flex: 0 0 var(--footer-h);
 }

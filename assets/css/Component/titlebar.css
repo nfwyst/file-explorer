@@ -1,5 +1,8 @@
 .titlebar {
-  background-color: #2d2d2d;
-  color: #dcdcdc;
+  background-color: var(--titlebar-bg-color);
+  color: var(--titlebar-fg-color);
   padding: .8em .6em;
+
+  position: sticky;
+  top: 0;
 }

@@ -1,5 +1,8 @@
 .footer {
-  border-top: 1px solid #2d2d2d;
-  background-color: #dedede;
+  border-top: 1px solid var(--separator-color);
+  background-color: var(--footer-bg-color);
   padding: .4em .6em;
+
+  position: sticky;
+  bottom: 0;
 }
