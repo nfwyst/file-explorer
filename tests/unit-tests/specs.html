@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>单元测试 runner</title>
+  <link href="https://cdn.bootcss.com/jasmine/3.1.0/jasmine.min.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jasmine/3.1.0/jasmine.min.js"></script>
+  <script src="https://cdn.bootcss.com/jasmine/3.1.0/jasmine-html.min.js"></script>
+  <script src="https://cdn.bootcss.com/jasmine/3.1.0/boot.min.js"></script>
+</head>
+
+<body>
+  <div id="sandbox" style="display: none"></div>
+  <script>
+    // catch error
+    process.on("uncaughtException", (err) => console.error(err));
+    const path = require("path");
+    const  jetpack = require("fs-jetpack");
+    const  matchingSpecs = jetpack.find("../../js", {
+        matching: [
+          "*.spec.js",
+          "!node_modules/**"
+        ]
+    }, "relativePath");
+    matchingSpecs.forEach(file => require(path.join(__dirname, file)));
+  </script>
+</body>
+
+</html>

@@ -16,9 +16,12 @@
     "resizable": true
   },
   "scripts": {
-    "start": "nw ."
+    "start": "nw .",
+    "test": "nw ./tests/unit-tests"
   },
-  "dependencies": {
+  "devDependencies": {
+    "fs-jetpack": "^2.0.0",
+    "mock-fs": "^4.5.0",
     "nw": "0.31.5-sdk"
   }
 }
