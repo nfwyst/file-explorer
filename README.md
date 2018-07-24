@@ -1,3 +1,3 @@
 # file-explorer
 
-![img]("./pic.png")
+![img](pic.png)
