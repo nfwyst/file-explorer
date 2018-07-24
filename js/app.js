@@ -25,7 +25,7 @@ new FileListView(document.querySelector('[data-bind=fileList]'), Dir, i18n, file
 new TitleBarView(document.querySelector('[data-bind=titlebarPath]'), Dir);
 
 // init lang 
-new Lang(document.querySelector('[data-bind=lang]'), document.querySelector('[data-bind=appname]'), i18n);
+new Lang(document.querySelector('[data-bind=lang]'), document.querySelector('[data-bind=appname]'), i18n, document);
 
 // init context menu
 new ContextMenuView(file, i18n, nw, document);

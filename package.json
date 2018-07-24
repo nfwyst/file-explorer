@@ -1,0 +1,28 @@
+{
+  "name": "file-explorer",
+  "version": "1.0.0",
+  "main": "index.html",
+  "license": "MIT",
+  "author": "nfwyst",
+  "chromium": "--mixed-context",
+  "window": {
+    "show": true,
+    "frame": true,
+    "width": 1000,
+    "height": 600,
+    "min_width": 800,
+    "min_height": 400,
+    "position": "center",
+    "resizable": true
+  },
+  "scripts": {
+    "start": "nw .",
+    "test": "nw ./tests/unit-tests"
+  },
+  "devDependencies": {
+    "filesize": "^3.6.1",
+    "fs-jetpack": "^2.0.0",
+    "mock-fs": "^4.5.0",
+    "nw": "0.31.5-sdk"
+  }
+}

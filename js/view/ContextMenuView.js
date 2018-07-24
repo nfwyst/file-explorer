@@ -17,11 +17,8 @@ class ContextMenuView {
   }
 
   render(fileName) {
-    alert(fileName);
     const menu = new this.nw.Menu();
-    const items = this.getItems(fileName);
-    alert(JSON.stringify(items));
-    // this.getItems(fileName).forEach(item => menu.append(new this.nw.MenuItem(item)));
+    this.getItems(fileName).forEach(item => menu.append(new this.nw.MenuItem(item)));
     return menu;
   }
 
