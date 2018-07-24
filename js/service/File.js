@@ -36,15 +36,15 @@ class FileService {
     const clip = this.nw.Clipboard.get();
     const types = clip.readAvailableTypes();
 
-    return (types.indexOf('png') !== -1 || types.indexOf('jpeg') !== -1) && (clip.get('png', true) || clip.get('jpeg', true));
+    return types.indexOf('png') !== -1 && clip.get('png', true);
   }
 
   pasteFromClip() {
     if (this.hasImageClip()) {
       const clip = this.nw.Clipboard.get();
-      const has = false;
+      let has = false;
 
-      ['png', 'jpeg'].map(type => {
+      ['png'].map(type => {
         return { 
           img: clip.get(type, true),
           type: type
