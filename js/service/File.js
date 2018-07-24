@@ -72,7 +72,7 @@ class FileService {
   copyImage(file, type) {
     const clip = this.nw.Clipboard.get();
     const data = fs.readFileSync(file).toString('base64');
-    const html = `<img src="file:///${encodeURI(data.replace(/^/, ""))}">`;
+    const html = `<img src="file:///${encodeURI(data.replace(/^\//, ''))}">`;
     clip.set([
       { type, data, raw: true },
       { type: 'html', data: html }
@@ -92,7 +92,7 @@ class FileService {
     if (this.isImg(this.copiedFile)) {
       const ext = this.getExt(this.copiedFile);
       // for image
-      this.copyImage(this.copiedFile,  ext === 'jpg' || ext === 'jpeg' ? 'jpeg' : 'png');
+      this.copyImage(this.copiedFile,  ['jpg','jpeg'].includes(ext) ? 'jpeg' : 'png');
     } else {
       // for text
       const clipboard = this.nw.Clipboard.get();
