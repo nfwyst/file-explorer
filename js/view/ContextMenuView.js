@@ -23,11 +23,11 @@ class ContextMenuView {
   }
 
   getItems(fileName) {
-    const labels = ['SHOW_FILE_IN_FOLDER', null, 'COPY', 'PASTE', null, 'DELETE'];
+    const labels = ['SHOW_FILE_IN_FOLDER', null, 'COPY', 'PASTE', null, 'DELETE', 'PASTE_FROM_CLIPBOARD'];
     return labels.map((label, index) => {
       return label ? {
-        label: this.i18n.translate(label, label.replace('_', ' ').toLowerCase()),
-        enabled: Boolean(index === 3 ? this.file.copiedFile : fileName),
+        label: this.i18n.translate(label, label.replace(/_/g, ' ').toLowerCase()),
+        enabled: Boolean(index === 3 ? this.file.copiedFile : index === 6 ? this.file.hasImageClip() : fileName),
         click: () => ContextMenuView[label].call(this, fileName),
       } : {type: 'separator'};
     });
@@ -35,6 +35,10 @@ class ContextMenuView {
 
   static PASTE() {
     this.file.paste();
+  }
+
+  static PASTE_FROM_CLIPBOARD() {
+    this.file.pasteFromClip(); 
   }
 
   static DELETE(fileName) {

@@ -32,6 +32,36 @@ class FileService {
     this.dir.notify();
   } 
 
+  hasImageClip() {
+    const clip = this.nw.Clipboard.get();
+    const types = clip.readAvailableTypes();
+
+    return (types.indexOf('png') !== -1 || types.indexOf('jpeg') !== -1) && (clip.get('png', true) || clip.get('jpeg', true));
+  }
+
+  pasteFromClip() {
+    if (this.hasImageClip()) {
+      const clip = this.nw.Clipboard.get();
+      const has = false;
+
+      ['png', 'jpeg'].map(type => {
+        return { 
+          img: clip.get(type, true),
+          type: type
+        }
+      }).forEach(item => {
+        if (item.img) {
+          const bin = Buffer.from(item.img, 'base64');
+          const fileName = `${Date.now()}--img.${item.type}`;
+          fs.writeFileSync(this.dir.getFile(fileName), bin);
+          has = true;
+        }
+      })
+
+      has ? this.dir.notify() : false;
+    }
+  }
+
   paste() {
     const file = this.copiedFile;
     if (fs.lstatSync(file).isFile()) {
@@ -39,8 +69,35 @@ class FileService {
     }
   }
 
+  copyImage(file, type) {
+    const clip = this.nw.Clipboard.get();
+    const data = fs.readFileSync(file).toString('base64');
+    const html = `<img src="file:///${encodeURI(data.replace(/^/, ""))}">`;
+    clip.set([
+      { type, data, raw: true },
+      { type: 'html', data: html }
+    ]);
+  }
+
+  getExt(file) {
+    return path.parse(file).ext.substr(1);
+  }
+
+  isImg(file) {
+    return ['jpg', 'jpeg', 'png'].includes(this.getExt(file));
+  }
+
   copy(file) {
     this.copiedFile = this.dir.getFile(file); 
+    if (this.isImg(this.copiedFile)) {
+      const ext = this.getExt(this.copiedFile);
+      // for image
+      this.copyImage(this.copiedFile,  ext === 'jpg' || ext === 'jpeg' ? 'jpeg' : 'png');
+    } else {
+      // for text
+      const clipboard = this.nw.Clipboard.get();
+      clipboard.set(this.copiedFile, "text");
+    }
   }
 
   open(file) {
