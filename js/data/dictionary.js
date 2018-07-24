@@ -8,6 +8,10 @@ exports.dictionary = {
     MAXIMIZE_WIN: 'Maximize window',
     CLOSE_WIN: 'Close window',
     APPNAME: 'File Explorer',
+    SHOW_FILE_IN_FOLDER: 'Show file in folder',
+    PASTE: 'paste',
+    COPY: 'copy',
+    DELETE: 'delete',
   },
   'zh-CN': {
     NAME: '名称',
@@ -18,5 +22,9 @@ exports.dictionary = {
     MAXIMIZE_WIN: '最大化窗口',
     CLOSE_WIN: '关闭窗口',
     APPNAME: '文件浏览器',
+    SHOW_FILE_IN_FOLDER: '在文件夹中打开',
+    PASTE: '粘贴',
+    COPY: '复制',
+    DELETE: '删除',
   }
 }

@@ -1,11 +1,11 @@
 const filesize = require('filesize');
 
 class FileListView {
-  constructor(el, service, n, i18n) {
+  constructor(el, service, i18n, fileService) {
     this.el = el;
     this.dir = service;
-    this.nw = n;
     this.i18n = i18n;
+    this.file = fileService;
 
     service.on('update', () => this.update(service.getFileList()));
     i18n.on('update', () => this.update(service.getFileList()));
@@ -45,10 +45,12 @@ class FileListView {
       let el;
       if (e.target.nodeName === 'SPAN') {
         el = e.target.parentElement;
+      } else {
+        el = e.target;
       }
       const val = el.getAttribute('data-file') || el.dataset.file;
       if (val) {
-        this.nw.Shell.openItem(this.dir.getFile(val)); 
+        this.file.open(val);
       } else {
         return false;
       }

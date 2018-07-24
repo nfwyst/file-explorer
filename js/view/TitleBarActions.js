@@ -11,13 +11,22 @@ class TitleBarActionsView {
    * @param {Object} n nw 实例 防止error
    * @returns {object}  the instance of TitleBarActionsView
    */
-  constructor(root, n) {
+  constructor(root, n, i18n) {
     this.close = root.querySelector("[data-bind=close]");
     this.min = root.querySelector("[data-bind=min]");
     this.max = root.querySelector("[data-bind=max]");
     this.unmax = root.querySelector("[data-bind=unmax]");
     this.nw = n;
+    this.i18n = i18n;
     this.bind();
+    i18n.on('update', () => this.translate());
+  }
+
+  translate() {
+    this.unmax.title = this.i18n.translate('RESTORE_WIN', 'restore window');
+    this.max.title = this.i18n.translate('MAXIMIZE_WIN', 'maximize window');
+    this.min.title = this.i18n.translate('MINIMIZE_WIN', 'minimize window');
+    this.close.title = this.i18n.translate('CLOSE_WIN', 'close window');
   }
 
   /**
