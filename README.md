@@ -1,3 +1,3 @@
 # file-explorer
 
-![img](path "./pic.png")
+![img]("./pic.png")
