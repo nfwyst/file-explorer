@@ -8,6 +8,7 @@ const I18nService = require('./js/service/I18n.js');
 const { dictionary } = require('./js/data/dictionary.js');
 const FileService = require('./js/service/File.js');
 const ContextMenuView = require('./js/view/ContextMenuView.js');
+const TrayView = require('./js/view/TrayView.js');
 const Dir = new DirService();
 const i18n = new I18nService(dictionary);
 const file = new FileService(Dir, nw);
@@ -29,6 +30,9 @@ new Lang(document.querySelector('[data-bind=lang]'), document.querySelector('[da
 
 // init context menu
 new ContextMenuView(file, i18n, nw, document);
+
+// init system tray
+new TrayView(i18n, nw, window);
 
 Dir.notify();
 i18n.notify();

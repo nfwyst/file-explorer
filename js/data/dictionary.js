@@ -13,6 +13,7 @@ exports.dictionary = {
     COPY: 'copy',
     DELETE: 'delete',
     PASTE_FROM_CLIPBOARD: 'paset from clipboard',
+    LABEL: 'Exit',
   },
   'zh-CN': {
     NAME: '名称',
@@ -28,5 +29,6 @@ exports.dictionary = {
     COPY: '复制',
     DELETE: '删除',
     PASTE_FROM_CLIPBOARD: '从系统剪贴板复制',
+    LABEL: '退出',
   }
 }

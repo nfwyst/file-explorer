@@ -10,6 +10,7 @@
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
 
 .footer-header {
